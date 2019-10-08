@@ -15,6 +15,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { CardComponent } from './card/card.component';
 import { ListComponent } from './list/list.component';
 
@@ -35,7 +37,8 @@ import { ListComponent } from './list/list.component';
     MatButtonModule,
     MatIconModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
