@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ITEMS } from '../mock-data';
+import { Item } from '../item';
+import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-list',
@@ -9,10 +10,11 @@ import { ITEMS } from '../mock-data';
 })
 export class ListComponent implements OnInit {
 
-  items = ITEMS;
-  constructor() { }
+  items: Item[];
+  constructor( private listService: ListService ) {}
 
   ngOnInit() {
+    this.listService.getItems().subscribe( items => this.items = items );
   }
 
 }
