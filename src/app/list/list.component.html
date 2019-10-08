@@ -1,5 +1,12 @@
-<ul *ngFor="let item of items" >
-	<li role="listitem">
-    <app-card [item]="item"></app-card>
-  </li>
-</ul>
+<div *ngIf="items.length">
+  <ul *ngFor="let item of items" >
+    <li role="listitem">
+      <app-card [item]="item"></app-card>
+    </li>
+  </ul>
+</div>
+<div *ngIf="!items.length">
+  <ul class="no-results">
+    <li><h2>Nenhum item na lista</h2></li>
+  </ul>
+</div>
