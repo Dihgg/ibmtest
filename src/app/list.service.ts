@@ -21,9 +21,13 @@ export class ListService {
     private http: HttpClient
   ) { }
 
+  addItem(): void {}
+
+  deleteItem(): void {}
+
   getItems(): Observable<Item[]> {
     this.openSnackBar( 'Lista Carregada', 'Fechar' );
-    // return of( ITEMS );
+    return of( ITEMS );
     return this.http.get<Item[]>(CONSTANTS.API.LIST)
       .pipe(
         catchError(this.handleError<Item[]>('getItems', []))
