@@ -1,0 +1,58 @@
+<mat-card *ngIf="item">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+      <mat-icon aria-hidden="true" aria-label="item">label</mat-icon>
+    </div>
+    <mat-card-title>{{item.name | uppercase}}</mat-card-title>
+    <mat-card-subtitle>
+      <strong>Qtd:</strong>
+      &nbsp;
+      <span>{{item.qty}}</span>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      <mat-checkbox checked={{item.checked}}>Comprado
+      </mat-checkbox>
+    </p>
+    <p *ngIf="edit">
+      <mat-form-field>
+        <input
+          matInput
+          floatLabel=true
+          [(ngModel)]="item.name"
+          placeholder="Nome"
+        >
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          floatLabel=true
+          [(ngModel)]="item.qty"
+          placeholder="Quantidade"
+        >
+      </mat-form-field>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="editar"
+        (click)="toggleEdit()"
+        *ngIf="!edit"
+      >edit</mat-icon>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="editar"
+        (click)="toggleEdit()"
+        *ngIf="edit"
+      >save</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="edit">
+      <mat-icon aria-hidden="false" aria-label="apagar">delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
