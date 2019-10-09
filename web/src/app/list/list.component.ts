@@ -16,6 +16,10 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.listService.getItems().subscribe( items => this.items = items );
+    // this.listService.getItems().subscribe( (data: any[]) => {
+    //   console.log( data );
+    //   this.items  = data.data;
+    // } );
   }
 
   addClick(): void {
