@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Item } from '../item';
+
 import { ListService } from '../list.service';
 
 @Component({
@@ -15,6 +16,18 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.listService.getItems().subscribe( items => this.items = items );
+  }
+
+  addClick(): void {
+    // this.items.push({ id: null, name: "Novo Item", qty:1, checked: false })
+    let _item: Item = {
+      id: null,
+      name: "Novo Item",
+      qty: 1,
+      checked: false
+    }
+    this.items.push( _item );
+
   }
 
 }

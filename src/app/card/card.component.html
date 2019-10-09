@@ -12,7 +12,7 @@
   </mat-card-header>
   <mat-card-content>
     <p>
-      <mat-checkbox [(ngModel)]="item.checked">Comprado
+      <mat-checkbox (change)="toggleChecked($event.checked)">Comprado
       </mat-checkbox>
     </p>
     <p *ngIf="edit">
@@ -37,21 +37,28 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-icon-button>
+    <button
+      mat-icon-button
+      (click)="toggleEdit()"
+      *ngIf="!edit"
+    >
       <mat-icon
         aria-hidden="false"
         aria-label="editar"
-        (click)="toggleEdit()"
-        *ngIf="!edit"
       >edit</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      (click)="editClick()"
+      *ngIf="edit"
+    >
       <mat-icon
         aria-hidden="false"
         aria-label="editar"
-        (click)="toggleEdit()"
         *ngIf="edit"
       >save</mat-icon>
     </button>
-    <button mat-icon-button *ngIf="edit" (click)="deleteClick()">
+    <button mat-icon-button (click)="deleteClick()">
       <mat-icon aria-hidden="false" aria-label="apagar">delete</mat-icon>
     </button>
   </mat-card-actions>

@@ -12,7 +12,6 @@ import { MatInputModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialogModule } from '@angular/material/dialog';
 
 import { FormsModule } from '@angular/forms';
 
@@ -20,16 +19,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { CardComponent } from './card/card.component';
 import { ListComponent } from './list/list.component';
-import { CardDialogDeleteComponent } from './card-dialog-delete/card-dialog-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    ListComponent,
-    CardDialogDeleteComponent
+    ListComponent
   ],
-  entryComponents : [CardDialogDeleteComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -41,7 +37,6 @@ import { CardDialogDeleteComponent } from './card-dialog-delete/card-dialog-dele
     MatButtonModule,
     MatIconModule,
     MatSnackBarModule,
-    MatDialogModule,
     FormsModule,
     HttpClientModule
   ],

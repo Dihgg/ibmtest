@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
 import { Item } from '../item';
-import { CardDialogDeleteComponent } from '../card-dialog-delete/card-dialog-delete.component';
+
+import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-card',
@@ -12,28 +11,36 @@ import { CardDialogDeleteComponent } from '../card-dialog-delete/card-dialog-del
 })
 export class CardComponent implements OnInit {
 
-  @Input() item: Item;
   edit = false;
+  
+  @Input() item: Item;
+  
 
-  constructor( public dialog: MatDialog ) { }
+  constructor(
+    private listService: ListService
+  ) { }
 
   ngOnInit() {
+  }
+
+  toggleChecked( isCheked: boolean ):void {
+    this.item.checked = isCheked;
+    console.log( 'checked', this.item.checked );
+    this.listService.checkItem( this.item.id, this.item.checked );
   }
 
   toggleEdit(): void {
     this.edit = !this.edit;
   }
 
-  deleteClick(): void {
-    const dialogRef  = this.dialog.open(CardDialogDeleteComponent, {
-      width: '250px',
-      data: { delete: false }
-    });
+  editClick(): void {
+    this.listService.editItem(this.item);
+    this.toggleEdit();
+  }
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
+  deleteClick(): void {
+    this.listService.deleteItem( this.item );
+    this.item = null;
   }
 
 }

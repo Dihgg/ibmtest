@@ -21,9 +21,22 @@ export class ListService {
     private http: HttpClient
   ) { }
 
-  addItem(): void {}
+  addItem( item: Item ): void {
+    console.log('create new');
+  }
 
-  deleteItem(): void {}
+  editItem( item: Item ):void {
+    console.log('edit');
+  }
+
+  deleteItem( item: Item ): void {
+    console.log('delete');
+    this.openSnackBar( 'Apagado', 'fechar' );
+  }
+
+  checkItem( id:number, check: boolean ):void {
+    console.log('check');
+  }
 
   getItems(): Observable<Item[]> {
     this.openSnackBar( 'Lista Carregada', 'Fechar' );
