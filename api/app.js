@@ -1,7 +1,11 @@
 // CONSTANTS
+require('dotenv').config();
+
 const express 		= require('express');
 const app 			= express();
 const bodyParser 	= require('body-parser');
+
+const PORT			= process.env.PORT || 3000;
 
 
 
@@ -33,4 +37,6 @@ app.get('/', function (req, res) {
 // All routes will be prefixed with /api
 app.use('/api', router);
 
-app.listen(3000);
+app.listen( PORT );
+
+module.exports	= app;
