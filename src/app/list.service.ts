@@ -21,9 +21,26 @@ export class ListService {
     private http: HttpClient
   ) { }
 
+  addItem( item: Item ): void {
+    console.log('create new');
+  }
+
+  editItem( item: Item ):void {
+    console.log('edit');
+  }
+
+  deleteItem( item: Item ): void {
+    console.log('delete');
+    this.openSnackBar( 'Apagado', 'fechar' );
+  }
+
+  checkItem( id:number, check: boolean ):void {
+    console.log('check');
+  }
+
   getItems(): Observable<Item[]> {
     this.openSnackBar( 'Lista Carregada', 'Fechar' );
-    // return of( ITEMS );
+    return of( ITEMS );
     return this.http.get<Item[]>(CONSTANTS.API.LIST)
       .pipe(
         catchError(this.handleError<Item[]>('getItems', []))

@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { Item } from '../item';
+
+import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-card',
@@ -8,15 +11,36 @@ import { Item } from '../item';
 })
 export class CardComponent implements OnInit {
 
-  @Input() item: Item;
   edit = false;
+  
+  @Input() item: Item;
+  
 
-  constructor() { }
+  constructor(
+    private listService: ListService
+  ) { }
 
   ngOnInit() {
   }
+
+  toggleChecked( isCheked: boolean ):void {
+    this.item.checked = isCheked;
+    console.log( 'checked', this.item.checked );
+    this.listService.checkItem( this.item.id, this.item.checked );
+  }
+
   toggleEdit(): void {
     this.edit = !this.edit;
+  }
+
+  editClick(): void {
+    this.listService.editItem(this.item);
+    this.toggleEdit();
+  }
+
+  deleteClick(): void {
+    this.listService.deleteItem( this.item );
+    this.item = null;
   }
 
 }
