@@ -15,7 +15,9 @@ Um *dump* do banco se encontra em `assets/local-dump.sql`
 Há um modelo do banco disponível em `assets/model.mwb`
 
 
-> Altarnativamente, é possível ajustar o valor do `env` em `api/config/config.json` para `test` e usar um banco de testes no servidor de [dihgg.com](http://dihgg.com)
+> As informações de conexão com o banco pode ser ajustada `api/config/config.json`
+
+> Altarnativamente, é possível ajustar o valor do `env` em `api/.env` para `test` e usar um banco de testes no servidor de [dihgg.com](http://dihgg.com)
 
 ### API
 - Navegue até a pasta da *api*: `$ cd api`
