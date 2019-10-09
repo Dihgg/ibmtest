@@ -12,7 +12,7 @@ const Item 	= require('../models/item');
 // ROUTES
 // Get all user related task
 router.route('/get/').get(function(req, res, next) {
-	model.Item.findAll({})
+	model.item.findAll({})
 	.then( items => res.json( items ) )
 	.catch ( error	=> res.json({
 		status	: false,
@@ -29,7 +29,7 @@ router.route('/add/').post(function(req, res) {
 		checked
 	} = req.body;
 	
-	model.Item.create({
+	model.item.create({
 		name	: name,
 		qty		: qty,
 		checked	: checked
@@ -50,7 +50,7 @@ router.route('/edit/:id').put(function(req, res) {
 		checked
 	} = req.body;
 	
-	model.Item.update({
+	model.item.update({
 		name	: name,
 		qty		: qty,
 		checked	: checked
@@ -70,7 +70,7 @@ router.route('/edit/:id').put(function(req, res) {
 router.route('/delete/:id').delete(function(req, res) {
 	const id	= req.params.id;
 	
-	model.Item.destroy({
+	model.item.destroy({
 		where	: {
 			id	: id
 		}
