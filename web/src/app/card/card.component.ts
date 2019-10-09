@@ -25,8 +25,9 @@ export class CardComponent implements OnInit {
 
   toggleChecked( isCheked: boolean ):void {
     this.item.checked = isCheked;
-    console.log( 'checked', this.item.checked );
-    this.listService.checkItem( this.item.id, this.item.checked );
+    // console.log( 'checked', this.item.checked );
+    this.listService.editItem( this.item ).subscribe( item => this.item );
+    // this.listService.checkItem( this.item.id, this.item.checked );
   }
 
   toggleEdit(): void {
@@ -34,13 +35,14 @@ export class CardComponent implements OnInit {
   }
 
   editClick(): void {
-    this.listService.editItem(this.item);
+    this.listService.editItem( this.item ).subscribe( item => this.item );
     this.toggleEdit();
   }
 
   deleteClick(): void {
-    this.listService.deleteItem( this.item );
-    this.item = null;
+    this.listService.deleteItem( this.item ).subscribe( () => {
+      this.item = null;
+    });
   }
 
 }
