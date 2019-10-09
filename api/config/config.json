@@ -14,5 +14,13 @@
     "host": "sql8.main-hosting.eu",
     "dialect": "mysql",
     "operatorsAliases": false
+  },
+  "unittest": {
+    "username": "u876755729_ibmt",
+    "password": "ra|qLd^^kujdw:Y6",
+    "database": "u876755729_ibmt",
+    "host": "sql8.main-hosting.eu",
+    "dialect": "mysql",
+    "operatorsAliases": false
   }
 }
