@@ -22,7 +22,7 @@ Há um modelo do banco disponível em `assets/model.mwb`
 ## API
 - Navegue até a pasta da *api*: `$ cd api`
 - Instale as dependências: `$ npm install`
-- Inicie o servidor: `$ npm start`
+- Inicie o servidor: `$ npm run start`
 
 A aplicação pode ser acessada em [localhost:3000/api/](localhost:3000/api/)
 
@@ -31,7 +31,7 @@ A aplicação pode ser acessada em [localhost:3000/api/](localhost:3000/api/)
 ## Angular
 - Navegue até a pasta da aplicação **web**: `$ cd web`
 - Instale as dependências: `$ npm install`
-- Sirva a aplicação **Angular** com `$ npm start`
+- Sirva a aplicação **Angular** com `$ npm run start`
 
 A aplicação pode ser acessada em [http://localhost:4200](http://localhost:4200)
 
