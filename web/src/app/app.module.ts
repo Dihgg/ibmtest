@@ -11,8 +11,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { FormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
 
 import { CardComponent } from './card/card.component';
 import { ListComponent } from './list/list.component';
@@ -33,7 +36,9 @@ import { ListComponent } from './list/list.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    MatSnackBarModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

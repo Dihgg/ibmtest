@@ -1,0 +1,16 @@
+<h1 class=list__title>Sua Lista de compras super simples</h1>
+<div *ngIf="items && items.length">
+  <ul *ngFor="let item of items" >
+    <li role="listitem">
+      <app-card [item]="item"></app-card>
+    </li>
+  </ul>
+</div>
+<div *ngIf="!items || !items.length">
+  <ul class="no-results">
+    <li><h2>Nenhum item na lista</h2></li>
+  </ul>
+</div>
+<button class="list-add-btn" mat-fab (click)="addClick()">
+  <mat-icon aria-hidden="false" aria-label="adicionar">add</mat-icon>
+</button>

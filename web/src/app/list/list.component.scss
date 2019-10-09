@@ -1,0 +1,19 @@
+h1.list__title {
+  text-align: center;
+  margin: 12px 0;
+}
+ul {
+  list-style: none;
+  margin: 24px auto;
+  padding: 0;
+}
+
+.no-results {
+  text-align: center;
+}
+
+.list-add-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}

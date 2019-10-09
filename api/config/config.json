@@ -1,0 +1,19 @@
+{
+  "env" : "development",
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "ibmtest",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "u876755729_ibm",
+    "password": "/zO!E+RFYAxi0:Gm",
+    "database": "u876755729_ibm",
+    "host": "sql8.main-hosting.eu",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
