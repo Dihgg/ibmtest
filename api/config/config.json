@@ -1,4 +1,5 @@
 {
+  "env" : "development",
   "development": {
     "username": "root",
     "password": "root",
@@ -8,18 +9,10 @@
     "operatorsAliases": false
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "u876755729_ibm",
+    "password": "/zO!E+RFYAxi0:Gm",
+    "database": "u876755729_ibm",
+    "host": "sql8.main-hosting.eu",
     "dialect": "mysql",
     "operatorsAliases": false
   }
