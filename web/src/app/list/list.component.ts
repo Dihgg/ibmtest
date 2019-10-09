@@ -15,7 +15,8 @@ export class ListComponent implements OnInit {
   constructor( private listService: ListService ) {}
 
   ngOnInit() {
-    this.listService.getItems().subscribe( items => this.items = items );
+    this.listService.getItems()
+    .subscribe( items => this.items = items );
     // this.listService.getItems().subscribe( (data: any[]) => {
     //   console.log( data );
     //   this.items  = data.data;
@@ -23,14 +24,15 @@ export class ListComponent implements OnInit {
   }
 
   addClick(): void {
-    // this.items.push({ id: null, name: "Novo Item", qty:1, checked: false })
     let _item: Item = {
       id: null,
       name: "Novo Item",
       qty: 1,
       checked: false
     }
-    this.items.push( _item );
+    
+    this.listService.addItem( _item )
+    .subscribe( item => this.items.push( item ) );
 
   }
 

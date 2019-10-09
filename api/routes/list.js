@@ -34,10 +34,7 @@ router.route('/add/').post(function(req, res) {
 		qty		: qty,
 		checked	: checked
 	})
-	.then( item => res.status(201).json({
-		status	: true,
-		message	: "Item criado com sucesso"
-	}))
+	.then( item => res.status(201).json( item ))
 	.catch ( error	=> res.json({
 		status	: false,
 		error	: error
@@ -45,7 +42,7 @@ router.route('/add/').post(function(req, res) {
 });
 
 // Update
-router.route('/edit/:id').post(function(req, res) {
+router.route('/edit/:id').put(function(req, res) {
 	const id = req.params.id;
 	const {
 		name,
@@ -62,10 +59,7 @@ router.route('/edit/:id').post(function(req, res) {
 			id	: id
 		}
 	})
-	.then( item	=> res.status(201).json({
-		status	: true,
-		message	: "Item atualizado"
-	}) )
+	.then( item	=> res.status(201).json( item ) )
 	.catch ( error	=> res.json({
 		status	: false,
 		error	: error

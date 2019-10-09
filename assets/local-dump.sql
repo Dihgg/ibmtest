@@ -27,9 +27,11 @@ CREATE TABLE `items` (
   `name` varchar(255) NOT NULL,
   `qty` int(11) NOT NULL,
   `checked` tinyint(4) NOT NULL DEFAULT '0',
-  `deleted_at` datetime DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  `deletedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +40,7 @@ CREATE TABLE `items` (
 
 LOCK TABLES `items` WRITE;
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` VALUES (1,'teste 1',1,0,NULL),(2,'Teste 2',3,1,NULL),(3,'Teste 3',10,0,NULL),(4,'Teste 4',1,1,'2019-10-08 21:48:00');
+INSERT INTO `items` VALUES (17,'Ovo',12,1,'2019-10-09 03:19:14','2019-10-09 03:24:57',NULL),(18,'Pão',2,1,'2019-10-09 03:24:35','2019-10-09 03:25:06',NULL),(19,'Leite',6,0,'2019-10-09 03:28:01','2019-10-09 03:28:10',NULL);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-08 21:48:22
+-- Dump completed on 2019-10-09  0:31:41
