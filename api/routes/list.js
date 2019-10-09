@@ -1,6 +1,5 @@
 'use strict'
 // NODE
-
 var express = require('express');
 var router = express.Router();
 
@@ -13,7 +12,7 @@ const Item 	= require('../models/item');
 // Get all user related task
 router.route('/get/').get(function(req, res, next) {
 	model.item.findAll({})
-	.then( items => res.json( items ) )
+	.then( items => res.status(201).json( items ) )
 	.catch ( error	=> res.json({
 		status	: false,
 		error	: error
