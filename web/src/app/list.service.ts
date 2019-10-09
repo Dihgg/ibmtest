@@ -40,8 +40,8 @@ export class ListService {
 
   getItems(): Observable<Item[]> {
     this.openSnackBar( 'Lista Carregada', 'Fechar' );
-    return of( ITEMS );
-    return this.http.get<Item[]>(CONSTANTS.API.LIST)
+    // return of( ITEMS );
+    return this.http.get<Item[]>(CONSTANTS.API.GET)
       .pipe(
         catchError(this.handleError<Item[]>('getItems', []))
       );
